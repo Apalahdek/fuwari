@@ -7,12 +7,12 @@ import type {
 import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
-  title: 'Fuwari',
-  subtitle: 'Demo Site',
+  title: 'Valzzyy',
+  subtitle: 'Blog Site',
   lang: 'en',
   themeHue: 250,
   banner: {
-    enable: false,
+    enable: true,
     src: 'assets/images/demo-banner.png',
   },
 }
@@ -23,8 +23,8 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.Archive,
     LinkPreset.About,
     {
-      name: 'GitHub',
-      url: 'https://github.com/saicaca/fuwari',
+      name: 'WhatsApp',
+      url: 'https://wa.me/6285701479245',
       external: true,
     },
   ],
@@ -32,23 +32,23 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
   avatar: 'assets/images/demo-avatar.png',
-  name: 'Lorem Ipsum',
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  name: 'Valzyy`',
+  bio: 'Hanya Manusia Biasa yang sedang mengejar Impian.',
   links: [
     {
-      name: 'Twitter',
-      icon: 'fa6-brands:twitter',
-      url: 'https://twitter.com',
+      name: 'WhatsApp',
+      icon: 'fa6-brands:whatsapp',
+      url: 'https://wa.me/6285701479245',
     },
     {
-      name: 'Steam',
-      icon: 'fa6-brands:steam',
-      url: 'https://store.steampowered.com',
+      name: 'Instagram',
+      icon: 'fa6-brands:instagram',
+      url: 'https://instagram.com/@zurakonter',
     },
     {
-      name: 'GitHub',
-      icon: 'fa6-brands:github',
-      url: 'https://github.com/saicaca/fuwari',
+      name: 'Discord',
+      icon: 'fa6-brands:Discord',
+      url: 'https://discord.com/users/1003187408751308851',
     },
   ],
 }
