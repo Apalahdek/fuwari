@@ -47,7 +47,7 @@ export const profileConfig: ProfileConfig = {
     },
     {
       name: 'Discord',
-      icon: 'fa6-brands:discord',
+      icon: 'fab fa-discord',
       url: 'https://discord.com/users/1003187408751308851',
     },
   ],
