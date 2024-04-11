@@ -12,7 +12,7 @@ export const siteConfig: SiteConfig = {
   lang: 'en',
   themeHue: 250,
   banner: {
-    enable: true,
+    enable: false,
     src: 'assets/images/demo-banner.png',
   },
 }
@@ -47,7 +47,7 @@ export const profileConfig: ProfileConfig = {
     },
     {
       name: 'Discord',
-      icon: 'fa6-brands:Discord',
+      icon: 'fa6-brands:discord',
       url: 'https://discord.com/users/1003187408751308851',
     },
   ],
