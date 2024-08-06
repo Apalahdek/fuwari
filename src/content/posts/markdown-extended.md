@@ -96,21 +96,6 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
     <div class="description">
         Highly customizable MM2 module that displays what you are listening to in Spotify. Compatible with MMM-LiveLyrics and DynamicTheming.
     </div>
-    <div class="footer">
-        <div class="stats">
-            <div>
-                <i style="background-image: url('star_icon.png');"></i>
-               
-            </div>
-            <div>
-                <i style="background-image: url('fork_icon.png');"></i>
-                
-            </div>
-        </div>
-        <div class="license">MIT</div>
-    </div>
-</div>
-
 </body>
 </html>
 
