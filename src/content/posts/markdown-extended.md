@@ -30,12 +30,12 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
             background-color: #f0f0f0;
         }
         .card {
-            background-color: #212121;
+            background-color: #091114;
             border-radius: 10px;
             color: white;
-            padding: 20px;
+            padding: 10px;
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
             font-family: Arial, sans-serif;
             box-sizing: border-box;
         }
@@ -90,7 +90,7 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
 
 <div class="card">
     <div class="header">
-        <img src="path_to_avatar_image.jpg" alt="User Avatar">
+        <img src="https://telegra.ph/file/4e9fc7519e4d85b743fd7.jpg" alt="User Avatar">
         <div class="title">Fabrizz / MMM-OnSpotify</div>
     </div>
     <div class="description">
@@ -100,11 +100,11 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
         <div class="stats">
             <div>
                 <i style="background-image: url('star_icon.png');"></i>
-                58
+               
             </div>
             <div>
                 <i style="background-image: url('fork_icon.png');"></i>
-                9
+                
             </div>
         </div>
         <div class="license">MIT</div>
@@ -113,7 +113,6 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
 
 </body>
 </html>
-
 
 Create a GitHub repository card with the code `::github{repo="<owner>/<repo>"}`.
 
