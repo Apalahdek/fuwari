@@ -13,7 +13,7 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
 
 ::github{repo="Fabrizz/MMM-OnSpotify"}
 
-::github{repo="Apalahdek/fuwari"}
+::github{repo="Apalahdek/Apalahdek"}
 
 
 Create a GitHub repository card with the code `::github{repo="<owner>/<repo>"}`.
