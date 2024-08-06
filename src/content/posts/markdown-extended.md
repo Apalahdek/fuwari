@@ -14,6 +14,90 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
 ::github{repo="Fabrizz/MMM-OnSpotify"}
 
 ::github{repo="Apalahdek/Sigma"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Card</title>
+    <style>
+        .card {
+            background-color: #212121;
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+            max-width: 400px;
+            font-family: Arial, sans-serif;
+        }
+        .card .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .card .header img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .card .title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .card .description {
+            margin: 10px 0;
+        }
+        .card .footer {
+            display: flex;
+            justify-content: space-between;
+        }
+        .card .footer .stats {
+            display: flex;
+            gap: 10px;
+        }
+        .card .footer .stats div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .card .footer .stats div i {
+            width: 16px;
+            height: 16px;
+            display: block;
+            background-size: contain;
+        }
+        .card .footer .license {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <img src="https://telegra.ph/file/4e9fc7519e4d85b743fd7.jpg" alt="User Avatar">
+        <div class="title">Fabrizz / MMM-OnSpotify</div>
+    </div>
+    <div class="description">
+        Highly customizable MM2 module that displays what you are listening to in Spotify. Compatible with MMM-LiveLyrics and DynamicTheming.
+    </div>
+    <div class="footer">
+        <div class="stats">
+            <div>
+                <i style="background-image: url(''');"></i>
+                
+            </div>
+            <div>
+                <i style="background-image: url('fork_icon.png');"></i>
+                
+            </div>
+        </div>
+        <div class="license">MIT</div>
+    </div>
+</div>
+
+</body>
+</html>
 
 
 Create a GitHub repository card with the code `::github{repo="<owner>/<repo>"}`.
