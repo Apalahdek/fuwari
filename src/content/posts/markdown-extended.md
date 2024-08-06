@@ -21,13 +21,23 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Card</title>
     <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
         .card {
             background-color: #212121;
             border-radius: 10px;
             color: white;
-            padding: 2px;
-            width: 450px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
             font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
         .card .header {
             display: flex;
@@ -43,6 +53,9 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
         .card .title {
             font-size: 18px;
             font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .card .description {
             margin: 10px 0;
@@ -50,6 +63,7 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
         .card .footer {
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
         .card .footer .stats {
             display: flex;
@@ -65,6 +79,7 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
             height: 16px;
             display: block;
             background-size: contain;
+            background-repeat: no-repeat;
         }
         .card .footer .license {
             font-size: 14px;
@@ -75,12 +90,26 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
 
 <div class="card">
     <div class="header">
-        <img src="https://telegra.ph/file/4e9fc7519e4d85b743fd7.jpg" alt="User Avatar">
+        <img src="path_to_avatar_image.jpg" alt="User Avatar">
         <div class="title">Fabrizz / MMM-OnSpotify</div>
     </div>
     <div class="description">
         Highly customizable MM2 module that displays what you are listening to in Spotify. Compatible with MMM-LiveLyrics and DynamicTheming.
     </div>
+    <div class="footer">
+        <div class="stats">
+            <div>
+                <i style="background-image: url('star_icon.png');"></i>
+                58
+            </div>
+            <div>
+                <i style="background-image: url('fork_icon.png');"></i>
+                9
+            </div>
+        </div>
+        <div class="license">MIT</div>
+    </div>
+</div>
 
 </body>
 </html>
