@@ -61,6 +61,36 @@ Optional information to help a user be more successful.
 :::
 ```
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display External Website</title>
+    <style>
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe src="https://www.example.com" title="External Website"></iframe>
+    </div>
+</body>
+</html>
+
 The title of the admonition can be customized.
 
 :::note[MY CUSTOM TITLE]
