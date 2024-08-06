@@ -26,7 +26,7 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
             border-radius: 10px;
             color: white;
             padding: 20px;
-            max-width: 400px;
+            width: 400px;
             font-family: Arial, sans-serif;
         }
         .card .header {
