@@ -64,11 +64,6 @@ export const profileConfig: ProfileConfig = {
       url: 'https://discord.com/users/1003187408751308851',
     },
     {
-      name: 'X',
-      icon: 'fa6-brands:x',
-      url: 'https://x.com/@valzyycans',
-    },
-    {
       name: 'Instagram',
       icon: 'fa6-brands:instagram',
       url: 'https://www.instagram.com/valzyycans',
