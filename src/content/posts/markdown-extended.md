@@ -14,6 +14,97 @@ You can add dynamic cards that link to GitHub repositories, on page load, the re
 ::github{repo="Fabrizz/MMM-OnSpotify"}
 
 ::github{repo="Apalahdek/Sigma"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .card {
+            background-color: #091114;
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+            width: 100vw;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .card .header img {
+            border-radius: 50%;
+            width: 60px; /* Perbesar ukuran gambar */
+            height: 60px; /* Perbesar ukuran gambar */
+            margin-right: 10px;
+        }
+        .card .title {
+            font-size: 24px; /* Perbesar ukuran font judul */
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card .description {
+            margin: 10px 0;
+            font-size: 18px; /* Perbesar ukuran font deskripsi */
+        }
+        .card .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card .footer .stats {
+            display: flex;
+            gap: 10px;
+        }
+        .card .footer .stats div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .card .footer .stats div i {
+            width: 16px;
+            height: 16px;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .card .footer .license {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="header">
+        <img src="https://telegra.ph/file/4e9fc7519e4d85b743fd7.jpg" alt="User Avatar">
+        <div class="title">Fabrizz / MMM-OnSpotify</div>
+    </div>
+    <div class="description">
+        Highly customizable MM2 module that displays what you are listening to in Spotify. Compatible with MMM-LiveLyrics and DynamicTheming.
+    </div>
+</div>
+
+</body>
+</html>
+
 
 Create a GitHub repository card with the code `::github{repo="<owner>/<repo>"}`.
 
