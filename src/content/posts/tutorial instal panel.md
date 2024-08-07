@@ -8,7 +8,9 @@ category: 'Tutorial'
 draft: false 
 ---
 
-# Cara Install Bot WhatsApp dengan Panel Pterodactyl dan Node.js
+:::important
+tidak semua cara run bot di wa itu seperti ini, bisa saja berbeda-beda!!
+:::
 
 ## Persiapan
 
