@@ -19,8 +19,8 @@ export const siteConfig: SiteConfig = {
     src: 'https://telegra.ph/file/1f51b9820d49a7b4645f6.jpg',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     position: 'center', // Equivalent to object-position, defaults center
     credit: {
-      enable: false,         // Display the credit text of the banner image
-      text: '',              // Credit text to be displayed
+      enable: true,         // Display the credit text of the banner image
+      text: 'valzy',              // Credit text to be displayed
       url: ''                // (Optional) URL link to the original artwork or artist's page
     }
   },
