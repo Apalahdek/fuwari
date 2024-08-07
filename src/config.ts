@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
     position: 'center', // Equivalent to object-position, defaults center
     credit: {
       enable: true,         // Display the credit text of the banner image
-      text: '2018-2024 Valzyh',              // Credit text to be displayed
+      text: 'Nextzy',              // Credit text to be displayed
       url: ''                // (Optional) URL link to the original artwork or artist's page
     }
   },
