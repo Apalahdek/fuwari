@@ -20,7 +20,7 @@ export const siteConfig: SiteConfig = {
     position: 'center', // Equivalent to object-position, defaults center
     credit: {
       enable: true,         // Display the credit text of the banner image
-      text: 'valzy',              // Credit text to be displayed
+      text: '2018-2024 Valzyh',              // Credit text to be displayed
       url: ''                // (Optional) URL link to the original artwork or artist's page
     }
   },
@@ -39,8 +39,8 @@ export const navBarConfig: NavBarConfig = {
     LinkPreset.Archive,
     LinkPreset.About,
     {
-      name: 'GitHub',
-      url: 'https://github.com/saicaca/fuwari',     // Internal links should not include the base path, as it is automatically added
+      name: 'WhatsApp',
+      url: 'https://wa.me/6285701479245',     // Internal links should not include the base path, as it is automatically added
       external: true,                               // Show an external link icon and will open in a new tab
     },
   ],
@@ -48,25 +48,35 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
   avatar: 'assets/images/demo-avatar.png',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-  name: 'Lorem Ipsum',
-  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  name: 'Valzyy'',
+  bio: 'Content Creator || FJKT48',
   links: [
     {
-      name: 'Twitter',
-      icon: 'fa6-brands:twitter',       // Visit https://icones.js.org/ for icon codes
+      name: 'WhatsApp',
+      icon: 'fa6-brands:whatsapp',       // Visit https://icones.js.org/ for icon codes
                                         // You will need to install the corresponding icon set if it's not already included
                                         // `pnpm add @iconify-json/<icon-set-name>`
-      url: 'https://twitter.com',
+      url: 'https://wa.me/6285701479245',
     },
     {
-      name: 'Steam',
-      icon: 'fa6-brands:steam',
-      url: 'https://store.steampowered.com',
+      name: 'Discord',
+      icon: 'fa6-brands:discord',
+      url: 'https://discord.com/users/1003187408751308851',
     },
     {
-      name: 'GitHub',
-      icon: 'fa6-brands:github',
-      url: 'https://github.com/saicaca/fuwari',
+      name: 'X',
+      icon: 'fa6-brands:x',
+      url: 'https://x.com/@valzyycans',
+    },
+    {
+      name: 'Instagram',
+      icon: 'fa6-brands:instagram',
+      url: 'https://www.instagram.com/@valzyycans',
+    },
+    {
+      name: 'YouTube',
+      icon: 'fa6-brands:youtube',
+      url: 'https://youtube.com/@valzyofc',
     },
   ],
 }
