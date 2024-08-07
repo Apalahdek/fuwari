@@ -8,6 +8,9 @@ category: 'Tutorial'
 draft: false 
 ---
 
+![.](https://github.com/user-attachments/assets/87bdd72d-e7d3-4893-a4e5-ebd6986b2afe)
+
+
 :::important
 tidak semua cara run bot di wa itu seperti ini, bisa saja berbeda-beda!!
 :::
