@@ -139,5 +139,6 @@ module.exports = handler;
 - **Persyaratan**: Pastikan Anda telah mengaktifkan dan menyeting fitur [sewabot otomatis](https://www.valzyofc.my.id/posts/fitur-sewabot/) sebelum menggunakan fitur tampilan ini.
 - **Kredit**: Penggunaan fitur ini memerlukan kredit kepada [Valzyy](https://wa.me/6285701479245). Pastikan untuk memberikan kredit yang sesuai dalam setiap implementasi.
 - **Cara Penggunaan**: Setelah fitur deposit QRIS diatur, Anda dapat menggunakan fitur ini untuk menampilkan tombol pilihan rencana waktu sewa bot kepada pengguna.
+- **Preview Tampilan Fitur**: ![Screenshot_2024-08-11-14-21-24-98_6012fa4d4ddec268fc5c7112cbb265e7](https://github.com/user-attachments/assets/6125c34c-7a6a-46c4-89d1-856e7ada9b64)
 
 Jika Anda memiliki pertanyaan atau memerlukan bantuan tambahan, jangan ragu untuk menghubungi kami.
