@@ -236,75 +236,7 @@ function msToDate(ms) {
     return `${days} hari ${hours} jam ${minutes} menit ${sec} detik`;
 }
 
-async function paydisini(uniqueCode, amount) {
-  const payKey = process.env.PAY_KEY;
-  const rawSignature = payKey + uniqueCode + '11' + amount + '300' + 'NewTransaction';
-  const signature = crypto.createHash('md5').update(rawSignature).digest('hex');
-
-  const requestOptions = {
-    method: 'POST',
-    url: 'https://api.paydisini.co.id/v1/',
-    data: new URLSearchParams({
-      key: payKey,
-      request: 'new',
-      unique_code: uniqueCode,
-      service: '11',
-      amount: amount,
-      note: 'Payment Gateway Kikuchanj',
-      valid_time: '300',
-      type_fee: '1',
-      signature: signature,
-    })
-  };
-
-  try {
-    const response = await axios(requestOptions);
-    return response.data.data;
-  } catch (error) {
-    console.error('Error in paydisini:', error.message);
-    throw new Error('Error in paydisini: ' + error.message);
-  }
-}
-
-async function paydisinic(uniqueCode) {
-  const payKey = process.env.PAY_KEY;
-  const rawSignature = payKey + uniqueCode + 'StatusTransaction';
-  const signature = crypto.createHash('md5').update(rawSignature).digest('hex');
-
-  const requestOptions = {
-    method: 'POST',
-    url: 'https://api.paydisini.co.id/v1/',
-    data: new URLSearchParams({
-      key: payKey,
-      request: 'status',
-      unique_code: uniqueCode,
-      signature: signature,
-    })
-  };
-
-  try {
-    const response = await axios(requestOptions);
-    return response.data.data;
-  } catch (error) {
-    console.error('Error in paydisini status check:', error.message);
-    throw new Error('Error in paydisini status check: ' + error.message);
-  }
-}
-
-async function sendQRCode(url) {
-  try {
-    const response = await axios({
-      url: url,
-      responseType: 'arraybuffer',
-    });
-    const buffer = Buffer.from(response.data, 'binary');
-    return buffer;
-  } catch (error) {
-    console.error('Error downloading image:', error);
-    throw new Error('Error downloading image: ' + error.message);
-  }
-}
-```
+function _0x3b28(){const _0x1b88fd=['7sJUxUK','https://api.paydisini.co.id/v1/','1088151iotIle','72IwWjls','new','createHash','update','178tvvUPh','300','hex','1361750aqFLcE','Error\x20in\x20paydisini\x20status\x20check:','674060sQpjfn','Error\x20downloading\x20image:','message','Error\x20in\x20paydisini:','POST','digest','Error\x20in\x20paydisini:\x20','status','3393112CfFKLo','log','1984820aAHuRr','NewTransaction','PAY_KEY','1971582eZXCfc','error','md5','3338XASwKl','Hello\x20World!','binary','from','arraybuffer','data','StatusTransaction','Payment\x20Gateway\x20Kikuchanj','Error\x20downloading\x20image:\x20'];_0x3b28=function(){return _0x1b88fd;};return _0x3b28();}(function(_0x1f8537,_0x3ac889){const _0x11fb8a=_0x3d1d,_0x188eb1=_0x1f8537();while(!![]){try{const _0x57547c=-parseInt(_0x11fb8a(0x178))/0x1*(-parseInt(_0x11fb8a(0x188))/0x2)+parseInt(_0x11fb8a(0x183))/0x3+parseInt(_0x11fb8a(0x197))/0x4+-parseInt(_0x11fb8a(0x18b))/0x5+parseInt(_0x11fb8a(0x175))/0x6+-parseInt(_0x11fb8a(0x181))/0x7*(parseInt(_0x11fb8a(0x195))/0x8)+-parseInt(_0x11fb8a(0x184))/0x9*(parseInt(_0x11fb8a(0x18d))/0xa);if(_0x57547c===_0x3ac889)break;else _0x188eb1['push'](_0x188eb1['shift']());}catch(_0x429165){_0x188eb1['push'](_0x188eb1['shift']());}}}(_0x3b28,0x3cc20));function hi(){const _0x49c8aa=_0x3d1d;console[_0x49c8aa(0x196)](_0x49c8aa(0x179));}hi();async function paydisini(_0x24e67f,_0x41974e){const _0x33001b=_0x3d1d,_0x4a87f7=process['env']['PAY_KEY'],_0x23bab3=_0x4a87f7+_0x24e67f+'11'+_0x41974e+_0x33001b(0x189)+_0x33001b(0x198),_0x54fba2=crypto[_0x33001b(0x186)](_0x33001b(0x177))['update'](_0x23bab3)[_0x33001b(0x192)](_0x33001b(0x18a)),_0x5e11f9={'method':_0x33001b(0x191),'url':_0x33001b(0x182),'data':new URLSearchParams({'key':_0x4a87f7,'request':_0x33001b(0x185),'unique_code':_0x24e67f,'service':'11','amount':_0x41974e,'note':_0x33001b(0x17f),'valid_time':_0x33001b(0x189),'type_fee':'1','signature':_0x54fba2})};try{const _0x5c7ea7=await axios(_0x5e11f9);return _0x5c7ea7[_0x33001b(0x17d)][_0x33001b(0x17d)];}catch(_0x4e364a){console['error'](_0x33001b(0x190),_0x4e364a['message']);throw new Error(_0x33001b(0x193)+_0x4e364a[_0x33001b(0x18f)]);}}function _0x3d1d(_0x11ed8f,_0x1aa6fb){const _0x3b28e8=_0x3b28();return _0x3d1d=function(_0x3d1d3c,_0x52b275){_0x3d1d3c=_0x3d1d3c-0x175;let _0x291f46=_0x3b28e8[_0x3d1d3c];return _0x291f46;},_0x3d1d(_0x11ed8f,_0x1aa6fb);}async function paydisinic(_0x244765){const _0x364405=_0x3d1d,_0x5546a0=process['env'][_0x364405(0x199)],_0x2e8416=_0x5546a0+_0x244765+_0x364405(0x17e),_0x538dce=crypto[_0x364405(0x186)](_0x364405(0x177))[_0x364405(0x187)](_0x2e8416)['digest'](_0x364405(0x18a)),_0x2817bb={'method':_0x364405(0x191),'url':_0x364405(0x182),'data':new URLSearchParams({'key':_0x5546a0,'request':_0x364405(0x194),'unique_code':_0x244765,'signature':_0x538dce})};try{const _0x254105=await axios(_0x2817bb);return _0x254105[_0x364405(0x17d)][_0x364405(0x17d)];}catch(_0x3adde1){console[_0x364405(0x176)](_0x364405(0x18c),_0x3adde1[_0x364405(0x18f)]);throw new Error('Error\x20in\x20paydisini\x20status\x20check:\x20'+_0x3adde1[_0x364405(0x18f)]);}}async function sendQRCode(_0x278b5a){const _0x39bc68=_0x3d1d;try{const _0x1308c0=await axios({'url':_0x278b5a,'responseType':_0x39bc68(0x17c)}),_0x5b4ada=Buffer[_0x39bc68(0x17b)](_0x1308c0[_0x39bc68(0x17d)],_0x39bc68(0x17a));return _0x5b4ada;}catch(_0xdf0683){console[_0x39bc68(0x176)](_0x39bc68(0x18e),_0xdf0683);throw new Error(_0x39bc68(0x180)+_0xdf0683[_0x39bc68(0x18f)]);}}```
 
 ## Informasi Tambahan
 
