@@ -8,6 +8,8 @@ category: 'Free'
 draft: false 
 ---
 
+::github{repo="Valzyy/sewabot-otomatis"}
+
 :::tip
 Jangan Lupa kasih Credits Gw ya cok, Jangan dijual juga ini fiturnya!!
 :::
