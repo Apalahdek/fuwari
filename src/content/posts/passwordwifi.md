@@ -65,3 +65,6 @@ for line in networks:
 
 ### Kesimpulan
 Dengan script sederhana di atas, Anda dapat mengekstrak password Wi-Fi yang tersimpan di sistem Anda menggunakan Python. Pastikan untuk selalu menghormati privasi dan kepemilikan informasi jaringan yang bukan milik Anda.
+
+### Video Tutorial:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lPILPnkgxBE?si=U4tR-NGaYT-c6mit" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
