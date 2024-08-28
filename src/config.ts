@@ -11,12 +11,12 @@ export const siteConfig: SiteConfig = {
   subtitle: 'BlogSite',
   lang: 'en',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko'
   themeColor: {
-    hue: 65,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
+    hue: 251,         // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
     fixed: false,     // Hide the theme color picker for visitors
   },
   banner: {
     enable: true,
-    src: 'https://telegra.ph/file/a356a20bd2fa61aa46bf7.jpg',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+    src: 'https://telegra.ph/file/3c35cd23ef48b9eac22b6.jpg',   // Relative to the /src directory. Relative to the /public directory if it starts with '/'
     position: 'center', // Equivalent to object-position, defaults center
     credit: {
       enable: true,         // Display the credit text of the banner image
@@ -47,7 +47,7 @@ export const navBarConfig: NavBarConfig = {
 }
 
 export const profileConfig: ProfileConfig = {
-  avatar: 'https://telegra.ph/file/eac8d4dfc9ae80e173f14.jpg',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
+  avatar: 'https://telegra.ph/file/9983e049ed1a22df309cc.jpg',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
   name: 'Valzyy',
   bio: 'Content Creator || FJKT48',
   links: [
