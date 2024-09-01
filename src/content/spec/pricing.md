@@ -1,17 +1,125 @@
-# Pricing
+---
+import path from 'path'
+import PostMetadata from './PostMeta.astro'
+import ImageWrapper from './misc/ImageWrapper.astro'
+import { Icon } from 'astro-icon/components'
+import { i18n } from '../i18n/translation'
+import I18nKey from '../i18n/i18nKey'
+import { getDir } from '../utils/url-utils'
 
-Here are the current pricing options available:
+interface Props {
+  class?: string
+  entry: any
+  title: string
+  url: string
+  published: Date
+  tags: string[]
+  category: string
+  image: string
+  description: string
+  price: number
+  draft: boolean
+  style: string
+}
 
-| Plan Name        | Image                                                                                 | Description                  | Price       | Features                                   | Action    |
-|------------------|---------------------------------------------------------------------------------------|------------------------------|-------------|--------------------------------------------|-----------|
-| **Basic Plan**   | ![Basic Plan Image](https://telegra.ph/file/ee2fd9ee8b03a68274b71.jpg)           | Perfect for personal use.    | $10/month   | - ✔️ 10 GB Storage<br>- ✔️ 100 GB Bandwidth<br>- ✔️ Basic Support | [Pay Now](#) |
-| **Pro Plan**     | ![Pro Plan Image](https://telegra.ph/file/ee2fd9ee8b03a68274b71.jpg)             | Best for small businesses.   | $30/month   | - ✔️ 50 GB Storage<br>- ✔️ 500 GB Bandwidth<br>- ✔️ Priority Support | [Pay Now](#) |
-| **Enterprise Plan** | ![Enterprise Plan Image](https://telegra.ph/file/ee2fd9ee8b03a68274b71.jpg) | For large companies.          | $100/month  | - ✔️ Unlimited Storage<br>- ✔️ Unlimited Bandwidth<br>- ✔️ 24/7 Dedicated Support | [Pay Now](#) |
+const {
+  entry,
+  title,
+  url,
+  published,
+  tags,
+  category,
+  image,
+  description,
+  price,
+  style,
+} = Astro.props
+const className = Astro.props.class
 
+const hasCover = image !== undefined && image !== null && image !== ''
+const coverWidth = '28%'
+const { remarkPluginFrontmatter } = await entry.render()
 ---
 
-## Sources of Images Used in This Site
-- [Unsplash](https://unsplash.com/)
-- [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-- [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+<div class:list={["card-base flex flex-col-reverse md:flex-col w-full rounded-[var(--radius-large)] overflow-hidden relative", className]} style={style}>
+    <div class:list={["pl-6 md:pl-9 pr-6 md:pr-2 pt-6 md:pt-7 pb-6 relative", {"w-full md:w-[calc(100%_-_52px_-_12px)]": !hasCover, "w-full md:w-[calc(100%_-_var(--coverWidth)_-_12px)]": hasCover}]}>
+        <a href={url} class="transition group w-full block font-bold mb-3 text-3xl text-90 hover:text-[var(--primary)] dark:hover:text-[var(--primary)] active:text-[var(--title-active)] dark:active:text-[var(--title-active)] before:w-1 before:h-5 before:rounded-md before:bg-[var(--primary)] before:absolute before:top-[35px] before:left-[18px] before:hidden md:before:block">
+            {title}
+            <Icon class="inline text-[2rem] text-[var(--primary)] md:hidden translate-y-0.5 absolute" name="material-symbols:chevron-right-rounded" ></Icon>
+            <Icon class="text-[var(--primary)] text-[2rem] transition hidden md:inline absolute translate-y-0.5 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0" name="material-symbols:chevron-right-rounded"></Icon>
+        </a>
 
+        <!-- metadata -->
+        <PostMetadata published={published} tags={tags} category={category} hideTagsForMobile={true} class="mb-4"></PostMetadata>
+
+        <!-- description -->
+        <div class:list={["transition text-75 mb-3.5 pr-4", {"line-clamp-2 md:line-clamp-1": !description}]}>
+            { description || remarkPluginFrontmatter.excerpt }
+        </div>
+
+        <!-- price -->
+        <div class="text-xl font-bold mb-4">${price.toFixed(2)}</div>
+
+        <!-- checkout button -->
+        <button class="btn-regular w-full mt-4" onClick={() => showCheckoutPopup(title, price)}>
+            Checkout
+        </button>
+
+        <!-- word count and read time -->
+        <div class="text-sm text-black/30 dark:text-white/30 flex gap-4 transition">
+            <div>{remarkPluginFrontmatter.words} {" " + i18n(I18nKey.wordsCount)}</div>
+            <div>|</div>
+            <div>{remarkPluginFrontmatter.minutes} {" " + i18n(I18nKey.minutesCount)}</div>
+        </div>
+
+    </div>
+
+    {hasCover && 
+        <a href={url} aria-label={title} class:list={["group", "max-h-[20vh] md:max-h-none mx-4 mt-4 -mb-2 md:mb-0 md:mx-0 md:mt-0", "md:w-[var(--coverWidth)] relative md:absolute md:top-3 md:bottom-3 md:right-3 rounded-xl overflow-hidden active:scale-95"]} >
+            <div class="absolute pointer-events-none z-10 w-full h-full group-hover:bg-black/30 group-active:bg-black/50 transition"></div>
+            <div class="absolute pointer-events-none z-20 w-full h-full flex items-center justify-center ">
+                <Icon name="material-symbols:chevron-right-rounded" class="transition opacity-0 group-hover:opacity-100 scale-50 group-hover:scale-100 text-white text-5xl"></Icon>
+            </div>
+            <ImageWrapper src={image} basePath={path.join("content/posts/", getDir(entry.id))} alt="Cover Image of the Post" class="w-full h-full"></ImageWrapper>
+        </a>
+    }
+
+    {!hasCover &&
+        <a href={url} aria-label={title} class="hidden md:flex btn-regular w-[3.25rem] absolute right-3 top-3 bottom-3 rounded-xl bg-[var(--enter-btn-bg)] hover:bg-[var(--enter-btn-bg-hover)] active:bg-[var(--enter-btn-bg-active)] active:scale-95">
+            <Icon name="material-symbols:chevron-right-rounded" class="transition text-[var(--primary)] text-4xl mx-auto"></Icon>
+        </a>
+    }
+</div>
+<div class="transition border-t-[1px] border-dashed mx-6 border-black/10 dark:border-white/[0.15] last:border-t-0 md:hidden"></div>
+
+<!-- Checkout Popup -->
+<div id="checkout-popup" class="fixed inset-0 flex items-center justify-center bg-black/50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-bold mb-4">Checkout</h2>
+        <p id="checkout-message" class="mb-4"></p>
+        <button id="confirm-checkout" class="btn-regular">Confirm Checkout</button>
+        <button id="cancel-checkout" class="btn-regular mt-2">Cancel</button>
+    </div>
+</div>
+
+<style lang="stylus" define:vars={{coverWidth}}>
+</style>
+
+<script>
+    function showCheckoutPopup(title, price) {
+        const popup = document.getElementById('checkout-popup');
+        const message = document.getElementById('checkout-message');
+        message.innerText = `Are you sure you want to checkout for ${title} at $${price.toFixed(2)}?`;
+        popup.classList.remove('hidden');
+
+        document.getElementById('confirm-checkout').onclick = () => {
+            // Handle checkout logic here
+            alert('Checkout confirmed!');
+            popup.classList.add('hidden');
+        };
+
+        document.getElementById('cancel-checkout').onclick = () => {
+            popup.classList.add('hidden');
+        };
+    }
+</script>
