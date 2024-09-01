@@ -1,121 +1,66 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Valzyy</title>
+    <title>Pricing List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .pricing-list {
-            margin-bottom: 20px;
-        }
-        .product {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 10px;
-            text-align: center;
-            width: 200px;
-            display: inline-block;
-            margin-right: 20px;
-        }
-        .product img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .checkout-btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .checkout-btn:hover {
-            background-color: #45a049;
-        }
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-        .popup-content {
-            background-color: white;
+            background-color: #f4f4f4;
+            margin: 0;
             padding: 20px;
-            border-radius: 8px;
-            width: 300px;
-            text-align: center;
         }
-        .popup-close {
-            background-color: red;
+        .pricing-table {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .pricing-item {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+        .pricing-item img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .checkout-button {
+            background-color: #007bff;
             color: white;
             border: none;
-            padding: 5px 10px;
             border-radius: 5px;
+            padding: 10px 20px;
             cursor: pointer;
-            float: right;
+            text-decoration: none;
         }
-        .popup-close:hover {
-            background-color: darkred;
-        }
-        .form-input {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+        .checkout-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-<h1>Blog Valzyy</h1>
+    <h1>Pricing List</h1>
 
-<h2>Pricing List</h2>
-<div class="pricing-list">
-    <div class="product">
-        <img src="https://telegra.ph/file/9767e04450c1bd323d538.jpg" alt="Product Image">
-        <h3>Produk 1</h3>
-        <p>Harga: Rp100.000</p>
-        <button class="checkout-btn" onclick="showPopup()">Checkout</button>
+    <div class="pricing-table">
+        <div class="pricing-item">
+            <img src="https://telegra.ph/file/9767e04450c1bd323d538.jpg" alt="Product Image">
+            <h2>Product Name</h2>
+            <div class="price">$19.99</div>
+            <a href="your-checkout-url" class="checkout-button">Checkout</a>
+        </div>
+        <!-- Repeat this block for more products -->
     </div>
-</div>
-
-<div class="popup" id="popup">
-    <div class="popup-content">
-        <button class="popup-close" onclick="hidePopup()">X</button>
-        <h3>Isi Formulir</h3>
-        <form id="checkoutForm">
-            <input type="email" class="form-input" placeholder="Email Anda" required>
-            <input type="text" class="form-input" placeholder="Nama Anda" required>
-            <input type="text" class="form-input" placeholder="Alamat" required>
-            <button type="submit" class="checkout-btn">Kirim</button>
-        </form>
-    </div>
-</div>
-
-<script>
-    function showPopup() {
-        document.getElementById('popup').style.display = 'flex';
-    }
-    function hidePopup() {
-        document.getElementById('popup').style.display = 'none';
-    }
-    
-    document.getElementById('checkoutForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert("Formulir telah dikirim!");
-        hidePopup();
-    });
-</script>
 
 </body>
 </html>
