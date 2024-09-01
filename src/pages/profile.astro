@@ -1,0 +1,52 @@
+---
+import MainGridLayout from '../layouts/MainGridLayout.astro'
+import { i18n } from '../i18n/translation'
+import I18nKey from '../i18n/i18nKey'
+
+const user = {
+    name: "John Doe",
+    email: "john.doe@example.com",
+    profilePicture: "path-to-user-profile.jpg", // Replace with the actual path to the profile picture
+    bio: "A brief bio about the user. This can include hobbies, job title, or any other relevant information."
+}
+---
+<MainGridLayout title={i18n(I18nKey.profile)} description={i18n(I18nKey.profile)}>
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full flex flex-col items-center">
+            
+            <!-- Profile Picture -->
+            <img src={user.profilePicture} alt="User Profile Picture" class="w-32 h-32 rounded-full object-cover mb-4">
+            
+            <!-- User Name -->
+            <h1 class="text-2xl font-bold text-center">{user.name}</h1>
+            
+            <!-- User Email -->
+            <p class="text-gray-600 text-center">{user.email}</p>
+            
+            <!-- User Bio -->
+            <div class="mt-6">
+                <p class="text-md text-center">{user.bio}</p>
+            </div>
+
+            <!-- Additional User Info -->
+            <div class="mt-6 w-full">
+                <!-- Example: User Stats -->
+                <div class="flex justify-around mt-6">
+                    <div class="text-center">
+                        <h2 class="text-xl font-semibold">Posts</h2>
+                        <p class="text-2xl">34</p>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-xl font-semibold">Followers</h2>
+                        <p class="text-2xl">128</p>
+                    </div>
+                    <div class="text-center">
+                        <h2 class="text-xl font-semibold">Following</h2>
+                        <p class="text-2xl">75</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</MainGridLayout>
