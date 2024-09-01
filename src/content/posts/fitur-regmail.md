@@ -5,7 +5,8 @@ description: 'Register With Email Otp'
 image: ''
 tags: [Free, Fitur, Botwa]
 category: 'Free'
-draft: false 
+draft: false
+page: 2
 ---
 
 :::warning
