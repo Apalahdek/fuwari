@@ -10,33 +10,26 @@
             margin: 20px;
         }
         .pricing-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            margin-bottom: 20px;
         }
         .product {
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
-            width: 250px;
+            width: 200px;
+            display: inline-block;
+            margin-right: 20px;
         }
         .product img {
             width: 100%;
             border-radius: 8px;
         }
-        .product h3 {
-            margin: 10px 0;
-        }
         .checkout-btn {
             background-color: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
+            padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -73,6 +66,13 @@
         .popup-close:hover {
             background-color: darkred;
         }
+        .form-input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -87,14 +87,18 @@
         <p>Harga: Rp100.000</p>
         <button class="checkout-btn" onclick="showPopup()">Checkout</button>
     </div>
-    <!-- Anda bisa menambahkan produk lainnya di sini -->
 </div>
 
 <div class="popup" id="popup">
     <div class="popup-content">
         <button class="popup-close" onclick="hidePopup()">X</button>
-        <h3>Terima Kasih!</h3>
-        <p>Pesanan Anda telah diterima.</p>
+        <h3>Isi Formulir</h3>
+        <form id="checkoutForm">
+            <input type="email" class="form-input" placeholder="Email Anda" required>
+            <input type="text" class="form-input" placeholder="Nama Anda" required>
+            <input type="text" class="form-input" placeholder="Alamat" required>
+            <button type="submit" class="checkout-btn">Kirim</button>
+        </form>
     </div>
 </div>
 
@@ -105,6 +109,12 @@
     function hidePopup() {
         document.getElementById('popup').style.display = 'none';
     }
+    
+    document.getElementById('checkoutForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert("Formulir telah dikirim!");
+        hidePopup();
+    });
 </script>
 
 </body>
