@@ -5,7 +5,7 @@
 <img src="https://example.com/basic-plan-image.jpg" alt="Basic Plan Image" width="300">
 <p>Perfect for personal use.</p>
 <p><strong>$10/month</strong></p>
-<ul>
+<ul style="border: 2px solid white; padding: 10px; border-radius: 5px;">
     <li>10 GB Storage</li>
     <li>100 GB Bandwidth</li>
     <li>Basic Support</li>
