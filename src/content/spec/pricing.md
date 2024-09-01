@@ -10,7 +10,9 @@
 
 <!-- Pricing Section -->
 <div class="container mx-auto py-12">
-  <h1 class="text-4xl font-bold text-center mb-12">Pricing Plans</h1>
+  <h1 class="text-4xl font-bold text-center mb-8">Pricing</h1>
+  <p class="text-lg text-center mb-6">Here are the current pricing options available:</p>
+  
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
     
     <!-- Basic Plan -->
@@ -56,6 +58,15 @@
     </div>
 
   </div>
+
+  <hr class="my-8 border-gray-300">
+
+  <h2 class="text-2xl font-semibold mb-4">Sources of Images Used in This Site</h2>
+  <ul class="list-disc list-inside">
+    <li><a href="https://unsplash.com/" class="text-blue-500 hover:underline">Unsplash</a></li>
+    <li><a href="https://www.pixiv.net/artworks/108916539" class="text-blue-500 hover:underline">星と少女</a> by <a href="https://www.pixiv.net/users/93273965" class="text-blue-500 hover:underline">Stella</a></li>
+    <li><a href="https://civitai.com/posts/586908" class="text-blue-500 hover:underline">Rabbit - v1.4 Showcase</a> by <a href="https://civitai.com/user/Rabbit_YourMajesty" class="text-blue-500 hover:underline">Rabbit_YourMajesty</a></li>
+  </ul>
 </div>
 
 <!-- Payment Details Modal -->
