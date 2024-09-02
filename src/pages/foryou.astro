@@ -10,7 +10,7 @@ const foryouPost = await getEntry('spec', 'foryou')
 
 const { Content } = await foryouPost.render()
 ---
-<MainGridLayout title={i18n(I18nKey.foryou)} description={i18n(I18nKey.foryou)}>
+<MainGridLayout title={i18n(I18nKey.foryou)} description={i18n(I18nKey.foryouDescription)}>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full">
             <Markdown class="mt-2">
