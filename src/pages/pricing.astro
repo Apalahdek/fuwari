@@ -6,11 +6,11 @@ import { i18n } from '../i18n/translation'
 import I18nKey from '../i18n/i18nKey'
 import Markdown from '@components/misc/Markdown.astro'
 
-const pricingPost = await getEntry('spec', 'pricing')
+const foryouPost = await getEntry('spec', 'foryou')
 
-const { Content } = await pricingPost.render()
+const { Content } = await foryouPost.render()
 ---
-<MainGridLayout title={i18n(I18nKey.pricing)} description={i18n(I18nKey.pricing)}>
+<MainGridLayout title={i18n(I18nKey.foryou)} description={i18n(I18nKey.foryou)}>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full">
             <Markdown class="mt-2">
