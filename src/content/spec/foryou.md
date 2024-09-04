@@ -1,35 +1,51 @@
-## Dalam Sunyi Ku Terlahir
-
-**Tanpa pelukan, tanpa bisikan manis,**  
-Kasih yang tak pernah hadir,  
-Membuat jiwa ini kian menangis.
-
-Sejak kecil, gelap selalu menyapa,  
-Penderitaan adalah teman sejatiku,  
-Namun, aku bertahan, meski luka,  
-Dengan hati yang hampir membeku.
-
-Lalu kau datang, Owens,  
-Bagaikan cahaya dalam malamku,  
-Kau buatku percaya pada harapan,  
-Bahagia yang dulu tak pernah kumau.
-
-Tapi semua itu hanyalah ilusi,  
-Karena kau berubah, menjadi asing,  
-Sikapmu yang dingin, penuh ironi,  
-Menyisakan luka, lebih dalam, lebih perih.
-
-Kini kita hanyalah bayangan,  
-Yang pernah ada di antara kita,  
-Maafkan aku yang telah berharap,  
-Terima kasih untuk semuanya, meski hanya sejenak bahagia.
-
-Namun, luka ini tak akan pernah pudar,  
-Karena cinta yang pernah hadir,  
-Kini menjadi mimpi buruk,  
-Yang terus menghantui setiap langkahku.
-
-<audio autoplay>
-  <source src="https://audio.jukehost.co.uk/vrJhbygm0CJLJwxfwuZ6yCxOWD23ScV6" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
+<html>
+  <head>
+    <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css" />
+    <title>TMF622_ProductOrder</title>
+  </head>
+  <body>
+    <div id="swagger-ui"></div>
+    <script defer>
+      window.onload = function () {
+        const ui = SwaggerUIBundle({
+          urls: [
+            {
+              name: "TMF622-ProductOrder-v4.0.0",
+              url: "TMF622-ProductOrder-v4.0.0.swagger.json",
+            },
+            {
+              name: "Product_Ordering_Management.regular",
+              url: "Product_Ordering_Management.regular.swagger.json",
+            },
+          ],
+          dom_id: "#swagger-ui",
+          deepLinking: true,
+          presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
+          plugins: [SwaggerUIBundle.plugins.DownloadUrl],
+          layout: "StandaloneLayout",
+        });
+        window.ui = ui;
+      };
+    </script>
+    <style>
+      .swagger-ui .topbar .download-url-wrapper input[type="text"] {
+        border: 2px solid #77889a;
+      }
+      .swagger-ui .topbar .download-url-wrapper .download-url-button {
+        background: #77889a;
+      }
+      .swagger-ui img {
+        display: none;
+      }
+      .swagger-ui .topbar {
+        background-color: #ededed;
+        border-bottom: 2px solid #c1c1c1;
+      }
+      .swagger-ui .topbar .download-url-wrapper .select-label {
+        color: #3b4151;
+      }
+    </style>
+  </body>
+</html>
