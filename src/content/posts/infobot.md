@@ -1,6 +1,6 @@
 ---
 title: Mengapa Bot Terkadang Tidak Mengirim Informasi Live atau Tidak Merespon?
-published: 2024-09-4
+published: 2024-09-04
 description: 'informasi lebih lanjut'
 image: ''
 tags: [Botwa]
