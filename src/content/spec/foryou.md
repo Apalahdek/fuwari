@@ -17,7 +17,7 @@
             },
             {
               name: "Product_Ordering_Management.regular",
-              url: "Product_Ordering_Management.regular.swagger.json",
+              url: "valzy.json",
             },
           ],
           dom_id: "#swagger-ui",
