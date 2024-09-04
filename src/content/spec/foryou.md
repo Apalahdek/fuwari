@@ -13,7 +13,7 @@
           urls: [
             {
               name: "TMF622-ProductOrder-v4.0.0",
-              url: "https://pastebin.com/qm3sb3tt",
+              url: "sigma.md",
             },
             {
               name: "Product_Ordering_Management.regular",
