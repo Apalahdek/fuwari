@@ -2,24 +2,96 @@
   <head>
     <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
     <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-standalone-preset.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css" />
-    <title>TMF622_ProductOrder</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css"
+    />
+    <title>Sorum Valz Store API</title>
   </head>
   <body>
     <div id="swagger-ui"></div>
     <script defer>
       window.onload = function () {
         const ui = SwaggerUIBundle({
-          urls: [
-            {
-              name: "TMF622-ProductOrder-v4.0.0",
-              url: "/valzy.json",
+          spec: {
+            openapi: "3.0.0",
+            info: {
+              version: "1.0.0",
+              title: "Sorum Valz Store API",
+              description: "This API provides access to the room data for the Sorum Valz Store."
             },
-            {
-              name: "Product_Ordering_Management.regular",
-              url: "valzy.json",
+            servers: [
+              {
+                url: "https://sorum-valz-store.vercel.app",
+                description: "Sorum Valz Store API Server"
+              }
+            ],
+            security: [
+              {
+                application: ["read", "write"]
+              }
+            ],
+            paths: {
+              "/api/rooms": {
+                get: {
+                  summary: "Get all rooms",
+                  description: "Retrieve a list of all available rooms.",
+                  responses: {
+                    "200": {
+                      description: "OK",
+                      content: {
+                        "application/json": {
+                          schema: {
+                            type: "array",
+                            items: {
+                              type: "object",
+                              properties: {
+                                id: {
+                                  type: "integer",
+                                  description: "Room ID"
+                                },
+                                name: {
+                                  type: "string",
+                                  description: "Name of the room"
+                                },
+                                price: {
+                                  type: "number",
+                                  format: "float",
+                                  description: "Price of the room"
+                                },
+                                available: {
+                                  type: "boolean",
+                                  description: "Availability of the room"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
             },
-          ],
+            components: {
+              schemas: {},
+              securitySchemes: {
+                application: {
+                  type: "oauth2",
+                  flows: {
+                    clientCredentials: {
+                      tokenUrl: "http://example.com/oauth/token",
+                      scopes: {
+                        write: "allows modifying resources",
+                        read: "allows reading resources"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
           dom_id: "#swagger-ui",
           deepLinking: true,
           presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
