@@ -43,6 +43,11 @@
     "svelte": "^4.2.18",
     "tailwindcss": "^3.4.7",
     "typescript": "^5.5.4",
+    "axios": "^0.24.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.19",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
