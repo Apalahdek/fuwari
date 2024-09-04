@@ -13,7 +13,7 @@
           urls: [
             {
               name: "TMF622-ProductOrder-v4.0.0",
-              url: "../valzy.json",
+              url: "/valzy.json",
             },
             {
               name: "Product_Ordering_Management.regular",
