@@ -13,7 +13,7 @@
           urls: [
             {
               name: "TMF622-ProductOrder-v4.0.0",
-              url: "TMF622-ProductOrder-v4.0.0.swagger.json",
+              url: "https://pastebin.com/qm3sb3tt",
             },
             {
               name: "Product_Ordering_Management.regular",
