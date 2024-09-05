@@ -1,24 +1,23 @@
 ---
 import MainGridLayout from '../layouts/MainGridLayout.astro'
 
+import { getEntry } from 'astro:content'
 import { i18n } from '../i18n/translation'
 import I18nKey from '../i18n/i18nKey'
-import Markdown from '@components/misc/Markdown.astro'
+import Markdown from 
+'@components/misc/Markdown.astro'
 
-// Ganti ini dengan URL API yang Anda gunakan
-const apiUrl = 'https://sorum-valz-store.vercel.app/api/rooms';
+const foryouPost = await getEntry('spec', 'api')
 
-// Mengambil data dari API
-const response = await fetch(apiUrl);
-const foryouData = await response.json();
-
+const { Content } = await foryouPost.render()
 ---
 <MainGridLayout title={i18n(I18nKey.foryou)} description={i18n(I18nKey.foryouDescription)}>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full">
             <Markdown class="mt-2">
-                {foryouData.content}
+                <Content />
             </Markdown>
         </div>
     </div>
 </MainGridLayout>
+
