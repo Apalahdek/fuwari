@@ -37,7 +37,7 @@ export const navBarConfig: NavBarConfig = {
   links: [
     LinkPreset.Home,
     LinkPreset.Archive,
-    LinkPreset.About,
+    LinkPreset.Api,
     {
       name: 'WhatsApp',
       url: 'https://wa.me/6285701479245',     // Internal links should not include the base path, as it is automatically added
