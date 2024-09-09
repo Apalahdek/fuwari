@@ -1,10 +1,8 @@
 ---
-// Import layout dan komponen
 import MainGridLayout from '../layouts/MainGridLayout.astro'
-import { i18n } from '../i18n/translation'
-import I18nKey from '../i18n/i18nKey'
 import { useState } from 'preact/hooks'
 import axios from 'axios'
+import Markdown from '@components/misc/Markdown.astro'
 
 // API Key YouTube Data API
 const YOUTUBE_API_KEY = 'AIzaSyALDAm7Ueoh29tGubH4sTcJV70mMAv7JdE'
@@ -33,8 +31,26 @@ const handleSearch = (event) => {
     const query = event.target.elements.query.value;
     searchYouTube(query);
 }
+
+// Render hasil pencarian
+const videoResults = searchResults.map((video) => `
+    ## ${video.snippet.title}
+    ![Video Thumbnail](https://img.youtube.com/vi/${video.id.videoId}/hqdefault.jpg)
+    [Tonton Video](https://www.youtube.com/watch?v=${video.id.videoId})
+    \n\n
+    ${video.snippet.description}
+`).join('\n\n')
+
+const content = `
+# Hasil Pencarian Video YouTube
+
+Berikut adalah hasil pencarian untuk video YouTube:
+
+${videoResults}
+`
+
 ---
-<MainGridLayout title={i18n(I18nKey.search)} description={i18n(I18nKey.searchDescription)}>
+<MainGridLayout title="Pencarian Video YouTube" description="Temukan video berdasarkan pencarian Anda">
     <div class="w-full flex justify-center">
         <form onSubmit={handleSearch} class="flex w-full max-w-4xl">
             <input
@@ -52,30 +68,6 @@ const handleSearch = (event) => {
         </form>
     </div>
     <div class="mt-8">
-        {searchResults.length > 0 ? (
-            <div class="flex flex-wrap gap-4">
-                {searchResults.map((video) => (
-                    <div class="w-full md:w-1/2 lg:w-1/3">
-                        <div class="card-base">
-                            <iframe
-                                width="100%"
-                                height="180"
-                                src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                                title={video.snippet.title}
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen
-                            ></iframe>
-                            <div class="p-4">
-                                <h3 class="text-lg font-semibold">{video.snippet.title}</h3>
-                                <p class="text-sm text-gray-500">{video.snippet.description}</p>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        ) : (
-            <p>Belum ada hasil pencarian.</p>
-        )}
+        <Markdown>{content}</Markdown>
     </div>
 </MainGridLayout>
