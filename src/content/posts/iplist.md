@@ -7,4 +7,4 @@ tags: [ip]
 category: 'Penting'
 draft: false
 ---
- 172.18.0.5
+ IP: 172.18.0.5
