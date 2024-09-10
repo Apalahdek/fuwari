@@ -5,7 +5,7 @@ description: 'ipGate'
 image: ''
 tags: [ip]
 category: 'Penting'
-draft: true
+draft: false
 ---
 
 NAMA: valzy
