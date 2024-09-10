@@ -12,3 +12,5 @@ draft: false
 - IP: 172.18.0.3
 - IP: 172.18.0.9
 ## Ip buyer..
+## No Buyer & Owner
+- NO: 6285701479245
