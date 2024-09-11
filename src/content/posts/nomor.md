@@ -9,3 +9,4 @@ draft: false
 ---
 
 NAMA: valzy
+NAMA: vin
