@@ -4,15 +4,14 @@ import MainGridLayout from '../layouts/MainGridLayout.astro'
 import { getEntry } from 'astro:content'
 import { i18n } from '../i18n/translation'
 import I18nKey from '../i18n/i18nKey'
-import Markdown from 
-'@components/misc/Markdown.astro'
-
+import Markdown from '@components/misc/Markdown.astro'
 ---
 
 <MainGridLayout>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
         <div class="card-base z-10 px-9 py-6 relative w-full">
             <Markdown class="mt-2">
+<!-- HTML content starts here -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,7 +117,8 @@ import Markdown from
     </script>
 </body>
 </html>
-</Markdown>
+<!-- HTML content ends here -->
+            </Markdown>
         </div>
     </div>
 </MainGridLayout>
