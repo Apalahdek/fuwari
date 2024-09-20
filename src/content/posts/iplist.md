@@ -7,11 +7,5 @@ tags: [ip]
 category: 'Penting'
 draft: false
 ---
-## Ip official punya valzyy
-- IP: 172.18.0.5
-- IP: 172.18.0.3
-- IP: 172.18.0.9
-- IP: 172.18.03
-## Ip buyer..
-## No Buyer & Owner
-- NO: 6285701479245
+## Pass
+PW: valzy
