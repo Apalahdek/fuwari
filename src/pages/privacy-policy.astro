@@ -1,0 +1,81 @@
+---
+import MainGridLayout from '../layouts/MainGridLayout.astro'
+import { i18n } from '../i18n/translation'
+import I18nKey from '../i18n/i18nKey'
+import Markdown from '@components/misc/Markdown.astro'
+---
+
+<MainGridLayout title={i18n(I18nKey.privacyPolicy)} description={i18n(I18nKey.privacyPolicyDescription)}>
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <Markdown class="mt-2">
+{`
+# DelynnAI Discord Bot - Privacy Policy
+
+## Last Updated: [Insert Date]
+
+Your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your information when using the DelynnAI Discord Bot (the "Bot"). By using the Bot, you agree to the terms outlined in this policy.
+
+### 1. **Information We Collect**
+
+We collect minimal information to ensure the Bot operates efficiently and provides the best user experience.
+
+#### a. **User Data**
+- **Messages and Commands**: The Bot processes user-submitted content such as messages, commands, and interactions. These are used temporarily to generate AI responses.
+- **Metadata**: We may collect metadata like the server ID, user ID, and message timestamps to improve service performance.
+
+#### b. **Log Data**
+- We may automatically collect log data about how the Bot is used, including server requests, errors, and basic statistics, but this data does not include personal identifiers.
+
+#### c. **Analytics**
+- The Bot may collect anonymized usage data for analytics purposes, such as which commands are used most frequently, to improve the user experience and the performance of the Bot.
+
+### 2. **How We Use Your Information**
+
+The collected information is used solely to provide and improve the Bot's functionalities. We do not store, share, or sell any personally identifiable information (PII).
+
+#### a. **Bot Performance**
+- Data is processed to ensure the Bot's commands function correctly and to respond to user inputs in real-time.
+
+#### b. **Service Improvements**
+- We may use aggregated data to understand Bot usage patterns and enhance existing features or introduce new ones.
+
+#### c. **Troubleshooting and Support**
+- Log data may be used to identify and fix bugs or troubleshoot issues that may arise while using the Bot.
+
+### 3. **Data Storage and Retention**
+
+#### a. **Temporary Data Storage**
+- Messages and user inputs are only processed temporarily to generate responses. We do not store this data after the interaction is complete.
+  
+#### b. **Analytics Data**
+- Any collected analytics data is stored anonymously and cannot be linked back to individual users. This data is retained for as long as necessary for analysis and improvement purposes.
+
+### 4. **Third-Party Services**
+
+We do not share your information with third-party services, except for platforms necessary to operate the Bot (such as Discord). These platforms have their own privacy policies and terms of service.
+
+### 5. **Security of Your Data**
+
+We take reasonable precautions to ensure that any data processed by the Bot is secure. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.
+
+### 6. **User Control and Opt-Out**
+
+If you no longer wish to use the Bot, you can remove it from your server. This will cease all data collection associated with the Bot.
+
+### 7. **Children’s Privacy**
+
+The Bot is not intended for use by individuals under the age of 13. We do not knowingly collect information from children under this age. If you believe we may have collected data from a child under 13, please contact us to delete that information.
+
+### 8. **Changes to the Privacy Policy**
+
+We reserve the right to update or modify this Privacy Policy at any time. Changes will be effective upon posting. Continued use of the Bot after changes are made indicates your acceptance of the new policy.
+
+### 9. **Contact Us**
+
+If you have any questions or concerns about this Privacy Policy, please contact us at: [Insert Contact Info].
+`}
+            </Markdown>
+        </div>
+    </div>
+</MainGridLayout>
