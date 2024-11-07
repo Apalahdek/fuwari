@@ -8,29 +8,66 @@ category: "Teknologi & Pengembangan"
 draft: false
 ---
 
-Berikut adalah dokumentasi dan penjelasan terperinci tentang website **https://live.valzyofc.my.id** dan beberapa endpoint penting yang ada di dalamnya. Website ini dikembangkan oleh **Valzy** untuk memberikan informasi dan akses ke berbagai konten yang terkait dengan JKT48, termasuk siaran langsung, teater, replay, event, dan sausenkyo.
+## Dokumentasi Website Live Valzyofc
 
-### Arsitektur Sistem Website
+### 1. **Deskripsi Umum**
 
-Website ini dirancang dengan arsitektur **Front-End dan Back-End** yang terpisah, untuk memastikan skalabilitas dan kemudahan pengelolaan setiap bagian sistem. Di bawah ini adalah gambaran umum dari arsitektur yang digunakan:
+Website **https://live.valzyofc.my.id** dikembangkan oleh **Valzy** untuk menyajikan konten live streaming, replay, dan berbagai informasi acara dari grup JKT48. Website ini memudahkan para penggemar mengakses informasi teater, event, serta voting sausenkyo, sehingga lebih mudah mengikuti perkembangan terbaru.
 
-- **Front-End**: Dibangun menggunakan HTML, CSS, dan JavaScript, kemungkinan dengan framework front-end seperti **React** atau **Vue.js** untuk meningkatkan interaktivitas dan performa UI.
-- **Back-End**: Mungkin menggunakan **Node.js** dengan framework seperti **Express** sebagai server, yang menangani pengelolaan data dan komunikasi dengan API.
-- **Database**: Menggunakan **MongoDB** atau **MySQL** untuk menyimpan data pengguna, riwayat tontonan, dan data penting lainnya yang mendukung setiap endpoint.
-- **Hosting dan Deployment**: Website ini kemungkinan di-host di **Vercel**, memungkinkan proses deploy yang mudah dan integrasi yang baik untuk perubahan cepat.
-  
-Berikut adalah penjelasan setiap endpoint dan cara kerjanya:
+### 2. **Arsitektur Sistem Website**
 
----
+Situs ini menggunakan arsitektur **Front-End dan Back-End** yang terpisah untuk menjaga skalabilitas, kecepatan, serta kemudahan pengembangan setiap modul. Berikut penjelasan komponen-komponennya:
 
-### Endpoint dan Fungsi
+- **Front-End**: Dibangun dengan **React** atau **Vue.js** yang mendukung antarmuka interaktif, responsif, dan user-friendly. HTML, CSS, dan JavaScript digunakan untuk tampilan dasar dan styling.
+- **Back-End**: Menggunakan **Node.js** dengan framework **Express** untuk mengatur request, routing, serta komunikasi dengan database dan API.
+- **Database**: **MongoDB** atau **MySQL** menyimpan data seperti informasi pengguna, jadwal tontonan, dan riwayat voting.
+- **Hosting dan Deployment**: **Vercel** dipilih sebagai platform hosting karena integrasi yang sederhana dan kemampuan continuous deployment.
 
-#### 1. **Home Endpoint** - `https://live.valzyofc.my.id/home`
+### 3. **Perkiraan Waktu Pengembangan**
 
-   - **Deskripsi**: Menyajikan halaman utama dari website. Di sini, pengguna dapat melihat konten utama atau informasi penting terkait live streaming dan update terbaru.
-   - **Data yang Ditampilkan**: Berita terbaru, live yang akan datang, dan event penting.
-   - **Cara Kerja**: Data ditarik dari server dan ditampilkan dalam bentuk komponen yang responsif. Data yang relevan diambil dari database atau API yang sudah disiapkan.
-   
+Perkiraan waktu pembuatan website ini sekitar **4-6 minggu**. Berikut perinciannya:
+
+1. **Perencanaan & Desain**: 1 minggu, termasuk membuat wireframe dan desain UI/UX.
+2. **Pengembangan Back-End**: 2 minggu, untuk konfigurasi server, routing, dan integrasi database.
+3. **Pengembangan Front-End**: 1-2 minggu, dengan fokus pada tampilan dan responsivitas.
+4. **Testing & Debugging**: 1 minggu, meliputi pengujian fitur dan optimasi performa.
+5. **Deployment**: 1-2 hari, untuk upload ke Vercel dan finalisasi domain.
+
+### 4. **Struktur File Website**
+
+Berikut adalah struktur direktori website ini:
+
+```
+live.valzyofc.my.id/
+├── client/                  # Front-End
+│   ├── public/              # File statis, misalnya gambar, ikon
+│   ├── src/                 
+│   │   ├── components/      # Komponen UI (Navbar, Footer, dll.)
+│   │   ├── pages/           # Halaman utama (Home, Theater, dll.)
+│   │   ├── App.js           # Komponen utama aplikasi
+│   │   ├── index.js         # Entry point aplikasi React/Vue
+│   └── package.json         # Dependencies front-end
+├── server/                  # Back-End
+│   ├── config/              # Konfigurasi database dan environment
+│   ├── controllers/         # Logika bisnis setiap endpoint
+│   ├── models/              # Skema database, seperti User, Schedule
+│   ├── routes/              # Routing untuk setiap endpoint
+│   ├── app.js               # Entry point utama server
+│   └── package.json         # Dependencies back-end
+├── .env                     # Environment variables
+└── README.md                # Dokumentasi proyek
+```
+
+### 5. **Endpoint dan Fungsi**
+
+Berikut adalah detail dari endpoint penting yang ada di website:
+
+#### 5.1 **Home Endpoint** - `https://live.valzyofc.my.id/home`
+
+   - **Deskripsi**: Menampilkan halaman utama dengan informasi terbaru, live streaming, dan event.
+   - **Data yang Ditampilkan**: Berita, event mendatang, dan jadwal live.
+   - **Cara Kerja**: Server mengambil data dari API atau database, lalu menampilkannya secara dinamis.
+
    **Contoh Code:**
    ```javascript
    app.get('/home', async (req, res) => {
@@ -39,12 +76,12 @@ Berikut adalah penjelasan setiap endpoint dan cara kerjanya:
    });
    ```
 
-#### 2. **Theater Endpoint** - `https://live.valzyofc.my.id/theater`
+#### 5.2 **Theater Endpoint** - `https://live.valzyofc.my.id/theater`
 
-   - **Deskripsi**: Menampilkan jadwal teater JKT48, termasuk informasi tentang waktu pertunjukan dan daftar artis yang akan tampil.
-   - **Data yang Ditampilkan**: Jadwal teater, informasi artis, dan kapasitas teater.
-   - **Cara Kerja**: Endpoint ini mengakses database atau API eksternal untuk mengambil jadwal teater yang terbaru, kemudian ditampilkan dalam format tabel atau daftar.
-   
+   - **Deskripsi**: Menampilkan jadwal teater, nama artis, dan kapasitas tempat duduk.
+   - **Data yang Ditampilkan**: Jadwal teater dan detail pertunjukan.
+   - **Cara Kerja**: Server mengakses database dan merender data dalam format tabel.
+
    **Contoh Code:**
    ```javascript
    app.get('/theater', async (req, res) => {
@@ -53,12 +90,12 @@ Berikut adalah penjelasan setiap endpoint dan cara kerjanya:
    });
    ```
 
-#### 3. **Replay Endpoint** - `https://live.valzyofc.my.id/replay`
+#### 5.3 **Replay Endpoint** - `https://live.valzyofc.my.id/replay`
 
-   - **Deskripsi**: Halaman ini menyediakan daftar siaran ulang (replay) yang bisa ditonton pengguna kapan saja.
-   - **Data yang Ditampilkan**: Replay video JKT48, informasi tanggal, dan link untuk menonton.
-   - **Cara Kerja**: Mengambil data replay dari database dan mengurutkannya berdasarkan tanggal terbaru.
-   
+   - **Deskripsi**: Menyediakan daftar video replay yang bisa ditonton kapan saja.
+   - **Data yang Ditampilkan**: Video replay dan tanggal penayangan.
+   - **Cara Kerja**: Data replay diambil dari database dan diurutkan berdasarkan tanggal.
+
    **Contoh Code:**
    ```javascript
    app.get('/replay', async (req, res) => {
@@ -67,12 +104,12 @@ Berikut adalah penjelasan setiap endpoint dan cara kerjanya:
    });
    ```
 
-#### 4. **Event Endpoint** - `https://live.valzyofc.my.id/event`
+#### 5.4 **Event Endpoint** - `https://live.valzyofc.my.id/event`
 
-   - **Deskripsi**: Halaman event menampilkan semua event khusus yang sedang berlangsung atau yang akan datang.
-   - **Data yang Ditampilkan**: Daftar event, deskripsi event, tanggal, dan link untuk partisipasi.
-   - **Cara Kerja**: Data event diambil dari database atau API yang mengelola data event terkini.
-   
+   - **Deskripsi**: Menampilkan event khusus dan cara partisipasi.
+   - **Data yang Ditampilkan**: Daftar event, deskripsi, dan tanggal event.
+   - **Cara Kerja**: Data event ditarik dari database atau API eksternal.
+
    **Contoh Code:**
    ```javascript
    app.get('/event', async (req, res) => {
@@ -81,12 +118,12 @@ Berikut adalah penjelasan setiap endpoint dan cara kerjanya:
    });
    ```
 
-#### 5. **Sausenkyo Endpoint** - `https://live.valzyofc.my.id/sausenkyo`
+#### 5.5 **Sausenkyo Endpoint** - `https://live.valzyofc.my.id/sausenkyo`
 
-   - **Deskripsi**: Halaman ini digunakan untuk menunjukkan hasil sementara dan voting dalam pemilihan member JKT48.
-   - **Data yang Ditampilkan**: Voting leaderboard, jumlah suara, dan posisi member.
-   - **Cara Kerja**: Data sausenkyo diperbarui secara real-time atau terjadwal dari API eksternal yang memantau hasil voting.
-   
+   - **Deskripsi**: Menunjukkan hasil voting sementara dalam pemilihan member JKT48.
+   - **Data yang Ditampilkan**: Voting leaderboard dan jumlah suara.
+   - **Cara Kerja**: Data diperbarui real-time dari API yang memantau hasil voting.
+
    **Contoh Code:**
    ```javascript
    app.get('/sausenkyo', async (req, res) => {
@@ -95,27 +132,82 @@ Berikut adalah penjelasan setiap endpoint dan cara kerjanya:
    });
    ```
 
----
+### 6. **Framework yang Digunakan**
 
-### Cara Kerja Sistem
+Website ini memanfaatkan beberapa framework penting, berikut adalah penjelasannya:
 
-1. **Request Handling**: Setiap kali pengguna mengunjungi endpoint, server menerima permintaan (request) tersebut.
-2. **Data Fetching**: Server kemudian mengambil data yang relevan dari API atau database.
-3. **Data Rendering**: Setelah data tersedia, server merender halaman yang diminta menggunakan template engine (misalnya, **EJS** atau **Handlebars**).
-4. **Front-End Display**: Data yang sudah dirender ditampilkan di halaman browser pengguna dengan tampilan yang responsif.
+1. **Express (Back-End)**  
+   Express adalah framework ringan untuk Node.js yang memudahkan pembuatan server, API, dan routing. Express menangani pengaturan endpoint dan mengelola request serta response dari server.
 
-### Roles Developer
+   **Contoh Code:**
+   ```javascript
+   const express = require('express');
+   const app = express();
+   
+   app.get('/home', (req, res) => {
+       res.send("Welcome to the Home Page!");
+   });
+   
+   app.listen(3000, () => {
+       console.log('Server running on port 3000');
+   });
+   ```
 
-Pada pengembangan website ini, **Valzy** memegang peran penting sebagai **Full-Stack Developer** yang mengelola:
+2. **React atau Vue (Front-End)**  
+   Untuk front-end, digunakan React atau Vue yang memungkinkan pembuatan UI interaktif berbasis komponen. React memberikan fleksibilitas lebih dengan JSX, sementara Vue menawarkan pendekatan sederhana yang lebih mudah bagi pemula.
 
-- **Back-End Development**: Mengatur routing, pengambilan data dari API dan database, serta pengaturan server.
-- **Front-End Development**: Mendesain UI dan UX halaman, serta memastikan tampilan responsif.
-- **Database Management**: Mengelola data yang diperlukan, mengoptimalkan query, dan memelihara data penting.
-  
-Berikut adalah diagram sederhana yang menjelaskan alur kerja sistem:
+   **Contoh React Component:**
+   ```javascript
+   import React from 'react';
+   
+   function Home() {
+       return (
+           <div>
+               <h1>Welcome to Live Valzy</h1>
+           </div>
+       );
+   }
+   
+   export default Home;
+   ```
 
-```
-Pengguna -> Front-End (Request) -> Server (Back-End) -> Database/API -> Front-End (Response) -> Pengguna
-```
+3. **MongoDB atau MySQL (Database)**  
+   Untuk penyimpanan data, MongoDB atau MySQL digunakan tergantung kebutuhan data. MongoDB cocok untuk data yang tidak terstruktur, sedangkan MySQL lebih baik untuk data dengan relasi yang kompleks.
 
-Semoga informasi dan dokumentasi ini memberikan pemahaman yang jelas tentang cara kerja **https://live.valzyofc.my.id**.
+   **Contoh Query MongoDB:**
+   ```javascript
+   const mongoose = require('mongoose');
+   const User = require('./models/User');
+   
+   mongoose.connect('mongodb://localhost:27017/valzyDB', { useNewUrlParser: true, useUnifiedTopology: true });
+   
+   async function getUsers() {
+       const users = await User.find();
+       console.log(users);
+   }
+   ```
+
+4. **Vercel (Hosting)**  
+   Vercel adalah platform yang mendukung deployment cepat dengan integrasi otomatis ke GitHub atau GitLab. Vercel memudahkan pengembangan front-end dan API back-end dalam satu project.
+
+5. **Template Engine (EJS atau Handlebars)**  
+   Template engine digunakan untuk rendering data dinamis pada server-side rendering, seperti halaman voting atau profil user.
+
+   **Contoh Template EJS:**
+   ```ejs
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Home</title>
+   </head>
+   <body>
+       <h1>Welcome to <
+
+%= siteName %></h1>
+   </body>
+   </html>
+   ```
+
+### 7. **Deployment dan Maintenance**
+
+Deployment dilakukan dengan menggunakan **Vercel**, yang menyediakan continuous deployment. Setiap commit baru di GitHub atau GitLab akan otomatis di-deploy, memudahkan proses update. Maintenance melibatkan monitoring performa server dan database serta penerapan pembaruan fitur yang disesuaikan dengan kebutuhan pengguna.
