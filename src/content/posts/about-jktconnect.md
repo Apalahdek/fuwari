@@ -2,7 +2,7 @@
 title: "Dokumentasi Website Live Valzyofc"
 published: 2024-11-08
 description: "Dokumentasi lengkap mengenai website live.valzyofc.my.id yang mencakup berbagai endpoint seperti home, theater, replay, event, dan sausenkyo, serta penjelasan cara kerjanya."
-image: 'https://live.valzyofc.my.id/images/logo.png'  # Sesuaikan dengan link gambar yang relevan
+image: 'https://jkt48.com/images/oglogo.png'  # Sesuaikan dengan link gambar yang relevan
 tags: [JKT48, live streaming, website, dokumentasi, Valzy]
 category: "Teknologi & Pengembangan"
 draft: false
