@@ -91,7 +91,7 @@ Mendapatkan data semua theater yang tersedia.
 
 ---
 
-### **3. `/theater-detail/:id`**
+### **3. `/theater/:id`**
 
 **GET**  
 Mendapatkan data theater berdasarkan ID.  
@@ -223,7 +223,7 @@ Gantilah `:name` dengan nama member yang diinginkan (misalnya `delynn`).
 
 ---
 
-### **7. `/now-live`**
+### **7. `/live`**
 
 **GET**  
 Mendapatkan data live saat ini berdasarkan grup.  
