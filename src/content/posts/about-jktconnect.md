@@ -2,7 +2,7 @@
 title: "Dokumentasi API JKT48Connect"
 published: 2024-11-20
 description: "Dokumentasi lengkap mengenai API yang digunakan di website http://www.jkt48connect.my.id, yang mencakup berbagai endpoint untuk mengambil data event, theater, news, member, dan live streaming JKT48."
-image: 'https://jkt48.com/images/oglogo.png'  # Sesuaikan dengan link gambar yang relevan
+image: 'https://8030.us.kg/file/G15f1rQUUhpd.jpg'  # Sesuaikan dengan link gambar yang relevan
 tags: [JKT48, API, live streaming, website, dokumentasi, Valzy]
 category: "Teknologi & Pengembangan"
 draft: false
