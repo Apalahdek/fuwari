@@ -14,7 +14,7 @@ draft: false
 
 ## **Base URL**
 ```
-http://api.jkt48connect.my.id
+https://api.jkt48connect.my.id
 ```
 
 ---
